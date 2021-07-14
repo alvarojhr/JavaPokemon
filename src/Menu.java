@@ -1,4 +1,5 @@
 import Models.Battle;
+import Models.User;
 
 import java.util.Scanner;
 
@@ -39,7 +40,16 @@ public class Menu {
     }
 
     private static void showMenuSettings(Scanner sc){
-        System.out.println("--- ");
+        System.out.print("User: ");
+        String user = sc.next();
+        System.out.print("Password: ");
+        String pass = sc.next();
 
+        if (User.isValid(user,pass)){
+            //TODO: Settings menu - 1. List pokemons. 2. Add pokemon. 3. Update pokemon. 4. Delete pokemon. 5. Set Battle. 0. Go back.
+            System.out.println("SETTINGS MENU");
+        }else {
+            System.out.println("\nAre you trying to hack us?");
+        }
     }
 }
