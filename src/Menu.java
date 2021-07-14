@@ -27,8 +27,8 @@ public class Menu {
                     //TODO: Generate starting play code
                     break;
                 case 2:
-                    showMenuSettings(sc);
                     //TODO: Generate setting game code. First priority. If you don't, you will get a zero grade.
+                    showMenuSettings(sc);
                     break;
                 case 0:
                     break;
@@ -39,6 +39,7 @@ public class Menu {
     }
 
     private static void showMenuSettings(Scanner sc){
+        System.out.println("--- ");
 
     }
 }
