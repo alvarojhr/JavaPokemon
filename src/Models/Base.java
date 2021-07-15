@@ -8,9 +8,14 @@ public class Base {
         this.name = nombre;
     }
 
+    public Base(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     public Base(){}
 
-    private int getId() {
+    public int getId() {
         return id;
     }
 
@@ -20,5 +25,13 @@ public class Base {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Base{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

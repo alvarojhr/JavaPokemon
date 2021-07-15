@@ -14,13 +14,11 @@ public class Battle {
                     new Pokemon("Ditto", 70, 20, 10),
                     new Pokemon("Charmander", 80, 35, 20),
                     new Pokemon("Gengar", 60, 10, 5),
-                    new Pokemon("Tulkas", 100, 30, 18),
                     new Pokemon("Roselia", 75, 30, 15),
                     new Pokemon("Eevee", 50, 10, 10),
                     new Pokemon("Cleffa", 90, 40, 10),
                     new Pokemon("Magikarp", 55, 20, 5),
                     new Pokemon("Mawile", 90, 80, 10),
-                    new Pokemon("Tulkas", 80, 30, 15),
                     new Pokemon("Squirtle", 80, 20, 50),
                     new Pokemon("Bulbasaur", 120, 35, 50),
                     new Pokemon("Torchic", 70, 70, 5),
@@ -40,5 +38,14 @@ public class Battle {
 
     public static void setPokemons(ArrayList<Pokemon> pokemons) {
         Battle.pokemons = pokemons;
+    }
+
+    public static String getListPokes(){
+        String result = "\n|Id |Name        |Health|Attack|Defense|\n"+
+                "|---|------------|------|------|-------|\n";
+        for (Pokemon pokemon:pokemons) {
+            result += pokemon.toString();
+        }
+        return result;
     }
 }

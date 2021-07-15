@@ -1,4 +1,5 @@
 import Models.Battle;
+import Models.Pokemon;
 import Models.User;
 
 import java.util.Scanner;
@@ -47,9 +48,47 @@ public class Menu {
 
         if (User.isValid(user,pass)){
             //TODO: Settings menu - 1. List pokemons. 2. Add pokemon. 3. Update pokemon. 4. Delete pokemon. 5. Set Battle. 0. Go back.
-            System.out.println("SETTINGS MENU");
+
+            showSettingsMenu(sc);
         }else {
             System.out.println("\nAre you trying to hack us?");
         }
+    }
+
+    private static void showSettingsMenu(Scanner sc){
+        int optionSetting;
+        do {
+
+            System.out.println("\nSETTINGS MENU\n");
+            System.out.println("1. List Pokemons.");
+            System.out.println("2. Add Pokemon.");
+            System.out.println("3. Update Pokemon.");
+            System.out.println("4. Delete Pokemon.");
+            System.out.println("5. Set Battle.");
+            System.out.println("0. Go back.");
+            System.out.print("\nChoose an option:");
+            optionSetting = sc.nextInt();
+
+            switch (optionSetting){
+                case 1:
+                    System.out.println(Battle.getListPokes());
+                    break;
+                case 2:
+                    //Battle.addPoke(sc);
+                    break;
+                case 3:
+                    //Battle.updatePoke(sc);
+                    break;
+                case 4:
+                    //Battle.deletePoke(sc);
+                    break;
+                case 5:
+
+                    break;
+                default:
+                    break;
+            }
+
+        }while(optionSetting != 0);
     }
 }
