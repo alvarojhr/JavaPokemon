@@ -48,4 +48,20 @@ public class Battle {
         }
         return result;
     }
+
+    public static void addPokemon(String namePokeToAdd, int healthPokeToAdd, int attackPokeToAdd, int defensePokeToAdd){
+        //create new pokemon
+        Pokemon pokemonToAdd = new Pokemon(namePokeToAdd,healthPokeToAdd,attackPokeToAdd,defensePokeToAdd);
+        //add pokemon in arr copy
+        pokemons.add(pokemonToAdd);
+    }
+
+    public static boolean isCreatedPokemon(String name){
+        for (Pokemon pokemon : pokemons) {
+            if (name.equals(pokemon.name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

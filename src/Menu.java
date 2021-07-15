@@ -2,6 +2,7 @@ import Models.Battle;
 import Models.Pokemon;
 import Models.User;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Menu {
@@ -74,7 +75,7 @@ public class Menu {
                     System.out.println(Battle.getListPokes());
                     break;
                 case 2:
-                    //Battle.addPoke(sc);
+                    createPokemon(sc);
                     break;
                 case 3:
                     //Battle.updatePoke(sc);
@@ -90,5 +91,29 @@ public class Menu {
             }
 
         }while(optionSetting != 0);
+    }
+
+    public static void createPokemon(Scanner sc){
+        try {
+            System.out.print("Name poke to add: ");
+            String namePokeToAdd = sc.next();
+            System.out.print("Health poke to add: ");
+            int healthPokeToAdd = sc.nextInt();
+            System.out.print("Attack poke to add: ");
+            int attackPokeToAdd = sc.nextInt();
+            System.out.print("Defense poke to add: ");
+            int defensePokeToAdd = sc.nextInt();
+
+            if(!Battle.isCreatedPokemon(namePokeToAdd)){
+                Battle.addPokemon(namePokeToAdd,healthPokeToAdd,attackPokeToAdd,defensePokeToAdd);
+                System.out.println("Pokemon added 😊😊");
+            }else{
+                System.out.println("We have already this Pokemon");
+            }
+
+        }catch (InputMismatchException e){
+            System.out.println("Error: "+e.getMessage());
+        }
+
     }
 }
